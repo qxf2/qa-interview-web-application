@@ -24,7 +24,7 @@ def factorial():
         return render_template('factorial.html')
     if request.method == 'POST':
         #return the answer
-        number = int(request.args.get('number'))
+        number = int(request.form.get('number'))
         result = calculate_factorial(number)
         api_response = {"answer": result}
         return jsonify(api_response)

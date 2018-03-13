@@ -18,15 +18,15 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h1 class="margin-base-vertical text-center">The greatest factorial calculator!</h1>
-                    <p class="input-group">
-                        <span class="input-group-addon">
-                            <span class="icon-arrow-right"></span>
-                        </span>
-                        <input type="text" id="number" class="form-control input-lg" name="number" placeholder="Enter an integer">
-                    </p>
-                    <p class="text-center top-space-40">
-                        <button type="submit" class="btn btn-success btn-lg" id="getFactorial">Calculate!</button>
-                    </p>
+                <p class="input-group">
+                    <span class="input-group-addon">
+                        <span class="icon-arrow-right"></span>
+                    </span>
+                    <input type="text" id="number" class="form-control input-lg" name="number" placeholder="Enter an integer" data-validation="number">
+                </p>
+                <p class="text-center top-space-40">
+                    <button type="submit" class="btn btn-success btn-lg" id="getFactorial">Calculate!</button>
+                </p>
             </div>
         </div>
         <div class="row">
@@ -35,29 +35,48 @@
                 </p>
             </div>
         </div>
-
+    </div>
+    <div class="col-md-12">
+        <div class="row-fluid">
+            <p class="margin-base-vertical text-center wor_copyright">
+                <a href="/privacy">Terms and Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/terms">Privacy</a>
+            </p>
+            <!--Copyright-->
+            <p class="margin-base-vertical text-center wor_copyright">
+                &copy; Qxf2 Services 2018 -
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+        </div>
+        <!--Copyright-->
     </div>
     <script>
-        $("document").ready(function() {
+        $("document").ready(function () {
             $("#getFactorial").click(function () {
                 var number = $('#number').val();
                 console.log(number);
-                var callDetails = {
-                    type: 'POST',
-                    url: '/factorial',
-                    data: {
-                        'number': number
-                    }
-                };
-                $.ajax(callDetails).done(function (factorial) {
-                    console.log('Hello! I am in the done part of the ajax call');
-                    console.log(factorial);
-                    $("#resultDiv").text('The factorial of ' + number + ' is: ' + factorial.answer);
-                });
+                if (number != parseInt(number, 10)) {
+                    $("#number").css('border', 'solid 2px red');
+                    $("#resultDiv").text('Please enter an integer')
+                    $("#resultDiv").css('color', 'red');
+                } else {
+                    $("#number").css('border', 'solid 1px #ccc');
+                    var callDetails = {
+                        type: 'POST',
+                        url: '/factorial',
+                        data: {
+                            'number': number
+                        }
+                    };
+                    $.ajax(callDetails).done(function (factorial) {
+                        console.log('Hello! I am in the done part of the ajax call');
+                        console.log(factorial);
+                        $("#resultDiv").css('color', 'black');
+                        $("#resultDiv").text('The factorial of ' + number + ' is: ' + factorial.answer);
+                    });
+                }
             });
         });
     </script>
-    
 </body>
 
 </html>

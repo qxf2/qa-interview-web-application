@@ -16,6 +16,7 @@ def calculate_factorial(n):
     else:
         return n*calculate_factorial(n-1)
 
+@app.route("/", methods=['GET', 'POST'])
 @app.route("/factorial", methods=['GET', 'POST'])
 def factorial():
     "Endpoint for calculating the factorial of a number"
@@ -28,6 +29,17 @@ def factorial():
         result = calculate_factorial(number)
         api_response = {"answer": result}
         return jsonify(api_response)
+
+@app.route("/terms")
+def terms_and_conditions():
+    "Return terms and conditions"
+    return "This is the terms and conditions document. We are not yet ready with it. Stay tuned!"
+
+@app.route("/privacy")
+def privacy():
+    "Return privacy statement"
+    return "This is the privacy document. We are not yet ready with it. Stay tuned!"
+    
 
 #---START OF SCRIPT
 if __name__ == '__main__':

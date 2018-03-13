@@ -22,7 +22,7 @@
                         <span class="input-group-addon">
                             <span class="icon-arrow-right"></span>
                         </span>
-                        <input type="text" id="number" class="form-control input-lg" name="number" placeholder="Enter an integer">
+                        <input type="text" id="number" class="form-control input-lg" name="number" placeholder="Enter an integer" data-validation="number">
                     </p>
                     <p class="text-center top-space-40">
                         <button type="submit" class="btn btn-success btn-lg" id="getFactorial">Calculate!</button>
@@ -41,6 +41,8 @@
         $("document").ready(function() {
             $("#getFactorial").click(function () {
                 var number = $('#number').val();
+                valid = $.isNumeric(number);
+                if (!valid){alert('Please enter an integer!')};
                 console.log(number);
                 var callDetails = {
                     type: 'POST',

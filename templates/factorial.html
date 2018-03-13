@@ -7,7 +7,9 @@
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet">
-    <!-- Wisdom of reddit style -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- QA interview stylesheet -->
     <link href="/static/css/qa_interview_style.css" rel="stylesheet">
 </head>
 
@@ -15,21 +17,47 @@
     <div class="container toppy">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h1 class="margin-base-vertical text-center">The greatest factorial calculator ... ever!</h1>
-                <form action="/factorial" method="POST" class="margin-base-vertical">
+                <h1 class="margin-base-vertical text-center">The greatest factorial calculator!</h1>
                     <p class="input-group">
                         <span class="input-group-addon">
                             <span class="icon-arrow-right"></span>
                         </span>
-                        <input type="text" class="form-control input-lg" name="number" placeholder="Enter an integer">
+                        <input type="text" id="number" class="form-control input-lg" name="number" placeholder="Enter an integer">
                     </p>
                     <p class="text-center top-space-40">
-                        <button type="submit" class="btn btn-success btn-lg">Find me some tangents!</button>
+                        <button type="submit" class="btn btn-success btn-lg" id="getFactorial">Calculate!</button>
                     </p>
-                </form>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p class="text-center top-space-20" id="resultDiv">
+                </p>
+            </div>
+        </div>
+
     </div>
+    <script>
+        $("document").ready(function() {
+            $("#getFactorial").click(function () {
+                var number = $('#number').val();
+                console.log(number);
+                var callDetails = {
+                    type: 'POST',
+                    url: '/factorial',
+                    data: {
+                        'number': number
+                    }
+                };
+                $.ajax(callDetails).done(function (factorial) {
+                    console.log('Hello! I am in the done part of the ajax call');
+                    console.log(factorial);
+                    $("#resultDiv").text('The factorial of ' + number + ' is: ' + factorial.answer);
+                });
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

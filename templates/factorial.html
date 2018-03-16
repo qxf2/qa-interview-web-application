@@ -53,8 +53,6 @@
         $("document").ready(function () {
             $("#getFactorial").click(function () {
                 var number = $('#number').val();
-                valid = $.isNumeric(number);
-                if (!valid){alert('Please enter an integer!')};
                 console.log(number);
                 if (number != parseInt(number, 10)) {
                     $("#number").css('border', 'solid 2px red');

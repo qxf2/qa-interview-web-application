@@ -11,9 +11,10 @@ h1 {
     font-family: "Abel", Arial, sans-serif;
     font-weight: 400;
     font-size: 40px;
-    color: #000000;    
+    color:#ff000063;;  
     line-height: 1.0;
 }
+
 
 h2 {
     font-family: "Abel", Arial, sans-serif;
@@ -110,7 +111,7 @@ img.logo{
 }
 
 grey-text {
-    color: #7e7e7e;
+    color: #e2dbdb00;
     margin-top: 5px;
 }
 
@@ -125,3 +126,5 @@ grey-text {
 .toppy-30 {
     padding-top: 30px;
 }
+
+

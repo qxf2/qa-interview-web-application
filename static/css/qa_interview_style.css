@@ -4,17 +4,15 @@ body {
     padding-top: 40px;
     font-size: 16px;
     font-family: "Open Sans",serif;
-    position: absolute;
 }
 
 h1 {
     font-family: "Abel", Arial, sans-serif;
     font-weight: 400;
     font-size: 40px;
-    color:#ff000063;;  
+    color:#5cb85cff;  
     line-height: 1.0;
 }
-
 
 h2 {
     font-family: "Abel", Arial, sans-serif;

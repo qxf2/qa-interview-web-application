@@ -17,6 +17,7 @@ For convenience, this app has been hosted at: [http://qainterview.pythonanywhere
 * a typo
 * a bug to test if the QA is reading the page content
 * a slightly weird wording 
+* a cross-browser bug 
 
 2. The app also has several workflows which will work well and that the QA being interviewed should check. 
 

@@ -1,0 +1,127 @@
+/*Stylesheet for BMI Calculator application*/
+
+body {
+    padding-top: 40px;
+    font-size: 16px;
+    font-family: "Open Sans",serif;
+    background-color:antiquewhite;
+}
+
+h1 {
+    font-family: "Abel", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color:#5cb85cff;  
+    line-height: 1.0;
+}
+
+h2 {
+    font-family: "Abel", Arial, sans-serif;
+}
+
+h3 {
+    font-family: "Abel", Arial, sans-serif;
+}
+
+p {
+    line-height: 2.0;
+}
+
+li {
+    line-height: 2.0;
+}
+
+
+/* Override B3 .panel adding a subtly transparent background */
+.panel {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.toppy {
+    padding-top: 70px;
+}
+
+.comment {
+    /* Src: http://codepen.io/martinwolf/pen/qlFdp */
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    margin: 0 auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.p_result{
+    line-height: 1.8;
+}
+
+.margin-base-vertical {
+    margin: 40px 0;
+}
+
+.wor_copyright {
+    font-family: "Abel", Arial, sans-serif;
+    font-size: 12px;
+}
+
+
+/*Add vertical space above divs*/
+.top-space-5 { 
+    margin-top:5px;
+}
+
+.top-space-10 { 
+    margin-top:10px;
+}
+
+.top-space { 
+    margin-top:10px;
+}
+
+.top-space-15 { 
+    margin-top:15px;
+}
+
+.top-space-20 { 
+    margin-top:20px;
+}
+
+.top-space-25 { 
+    margin-top:25px;
+}
+
+.top-space-30 { 
+    margin-top:30px;
+}
+
+.top-space-40 { 
+    margin-top:40px;
+}
+
+.top-space-50 { 
+    margin-top:50px;
+}
+
+/*Logo*/
+img.logo{
+    max-height: 100px;
+    max-width: 250px;
+}
+
+grey-text {
+    color: #7e7e7e;
+    margin-top: 5px;
+}
+
+.toppy-10 {
+    padding-top: 10px;
+}
+
+.toppy-20 {
+    padding-top: 20px;
+}
+
+.toppy-30 {
+    padding-top: 30px;
+}
